@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# 📚 Book CSV App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A lightweight React application to **upload, edit, and download CSV files** of books. Built with **Vite**, **React 19**, **TypeScript**, **TailwindCSS**, and **TanStack Table**. Supports large datasets, inline editing, CSV export, and reset functionality.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Features**
 
-## React Compiler
+- Upload CSV files containing book data  
+- Inline edit table data directly in the browser  
+- Highlight modified cells for clarity  
+- Reset all edits to original CSV data  
+- Download updated CSV easily  
+- Global search and sortable columns  
+- Pagination with customizable page size  
+- Responsive design for desktop and mobile  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## **Demo Screenshot**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img width="1560" height="908" alt="image" src="https://github.com/user-attachments/assets/4b461c59-23df-49f6-a9a1-d99d9a8a2f2c" />
+  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Dependencies
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project uses the following libraries and tools:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React 19** – Frontend library for building UI  
+- **Vite** – Development server and build tool  
+- **TypeScript** – Static typing for safer code  
+- **TailwindCSS** – Utility-first CSS framework for styling  
+- **@tanstack/react-table** – Table rendering, sorting, filtering, and pagination  
+- **Papaparse** – CSV parsing and generation  
+- **Lodash & match-sorter** – Efficient sorting and filtering utilities  
+- **@faker-js/faker** – Generate fake book data for testing  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Usage Instructions
+
+1. **Upload CSV** – Click **Upload CSV File** and select a CSV file. Required headers:  
+   `Title, Author, Genre, PublishedYear, ISBN`.  
+2. **Edit Inline** – Modify any table cell directly. Edited cells are highlighted.  
+3. **Reset** – Click **Reset All Edits** to restore the original CSV data.  
+4. **Download** – Click **Download CSV** to save the updated data.  
+5. **Search** – Use the search bar to filter books globally.  
+6. **Sort** – Click column headers to sort ascending/descending.  
+7. **Pagination** – Use the pagination controls at the bottom to navigate pages and adjust page size.  
+
+---
+
+## **Installation**
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/book-csv-app.git
+cd book-csv-app
